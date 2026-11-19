@@ -7,6 +7,24 @@
  */
 
 (function () {
+  // Surge cannot attach a replacement body to a bodyless response.
+  // Keep failed, empty, or non-JSON upstream responses untouched.
+  const status = Number($response.status);
+  const responseBody = $response.body;
+  if (String($request.method || "").toUpperCase() === "HEAD" ||
+      !Number.isFinite(status) || status < 200 || status >= 300 ||
+      status === 204 || status === 205 ||
+      typeof responseBody !== "string" || responseBody.trim() === "") {
+    $done({});
+    return;
+  }
+  try {
+    JSON.parse(responseBody);
+  } catch (_) {
+    $done({});
+    return;
+  }
+
   const url = $request.url;
   let body;
 
