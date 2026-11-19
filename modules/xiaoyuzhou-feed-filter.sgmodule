@@ -1,0 +1,10 @@
+#!name=小宇宙首页推广过滤
+#!desc=仅过滤首页信息流的推广横幅
+# 功能来源：ddgksf2013 / 小宇宙FM去广告[墨鱼版]
+# https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/XiaoYuZhouAds.conf
+
+[MITM]
+hostname = %APPEND% api.xiaoyuzhoufm.com
+
+[Body Rewrite]
+http-response-jq ^https://api\.xiaoyuzhoufm\.com/v[0-9]+/discovery-feed/list/?(?:[?#]|$) 'select(type == "object") | select(.data | type == "array") | .data |= map(select(.type != "DISCOVERY_BANNER"))'
