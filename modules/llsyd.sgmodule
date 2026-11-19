@@ -1,0 +1,8 @@
+#!name=流利说·阅读
+#!desc=原 Quantumult X llsyd.js 的 Surge 适配，保留原版响应数据。需开启 MITM 并信任证书。
+
+[Script]
+llsyd = type=http-response,pattern=^https?://vira\.llsapp\.com/api/v2/(member/subscription|user_goods_subscriptions/overall)/?(\?.*)?$,requires-body=true,script-path=https://raw.githubusercontent.com/Abinthur/Surge-for-personal-use/main/scripts/llsyd.js
+
+[MITM]
+hostname = %APPEND% vira.llsapp.com
