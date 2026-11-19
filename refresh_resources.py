@@ -17,6 +17,9 @@ HOSTS = {'raw.githubusercontent.com', 'gist.githubusercontent.com'}
 RULE_TYPES = {'DOMAIN', 'DOMAIN-SUFFIX', 'DOMAIN-KEYWORD', 'DOMAIN-WILDCARD', 'IP-CIDR', 'IP-CIDR6', 'IP-ASN', 'GEOIP', 'USER-AGENT', 'URL-REGEX', 'PROCESS-NAME', 'PROCESS-PATH', 'AND', 'OR', 'NOT', 'DEST-PORT', 'SRC-PORT', 'SRC-IP'}
 
 
+HTTP_RESPONSE_GUARD = '  const responseStatus = Number($response.status);\n  const responseBody = $response.body;\n  if (String($request.method || "").toUpperCase() === "HEAD" ||\n      (responseStatus >= 100 && responseStatus < 200) ||\n      responseStatus === 204 || responseStatus === 205 || responseStatus === 304 ||\n      responseBody === undefined || responseBody === null ||\n      (typeof responseBody === "string" && responseBody.trim() === "") ||\n      (responseBody instanceof Uint8Array && responseBody.byteLength === 0)) {\n    $done({});\n    return;\n  }\n'
+GUARD_PREFIX = b"// Surge bodyless/empty response safety guard, 2026-11-19. Upstream logic follows unchanged.\n(function () {\n"
+
 def digest(data):
     return hashlib.sha256(data).hexdigest()
 
@@ -39,6 +42,8 @@ def fetch(url):
 
 
 def transform(data, mode):
+    if mode == 'http-response-guard':
+        return GUARD_PREFIX + HTTP_RESPONSE_GUARD.encode() + data + b'\n})();\n'
     if mode != 'clash-payload':
         return data
     out = []
@@ -62,7 +67,9 @@ def transform(data, mode):
     return ('\n'.join(out) + '\n').encode()
 
 
-def validate(data, kind):
+def validate(data, kind, mode='identity'):
+    if mode == 'http-response-guard' and not data.startswith(GUARD_PREFIX):
+        raise ValueError('missing required HTTP response guard')
     if not data or len(data) > MAX_BYTES:
         raise ValueError('empty or oversized response')
     text = data.decode('utf-8-sig')
@@ -124,7 +131,7 @@ def main():
     if args.check_only:
         for item in items:
             data = (root / item['path']).read_bytes()
-            validate(data, item['kind'])
+            validate(data, item['kind'], item.get('transform', 'identity'))
             if digest(data) != previous[item['path']]['sha256']:
                 raise ValueError('cached checksum mismatch: ' + item['path'])
         print('Verified resources:', len(items))
@@ -144,12 +151,15 @@ def main():
         if path.exists() and old_meta:
             candidate = path.read_bytes()
             if digest(candidate) == old_meta['sha256']:
-                validate(candidate, item['kind'])
-                old = candidate
+                try:
+                    validate(candidate, item['kind'], item.get('transform', 'identity'))
+                    old = candidate
+                except ValueError:
+                    old_meta = None
         try:
             source = Path(cache[item['url']]).read_bytes() if args.cache_report else fetch(item['url'])
             data = transform(source, item.get('transform', 'identity'))
-            count = validate(data, item['kind'])
+            count = validate(data, item['kind'], item.get('transform', 'identity'))
             if old is None and digest(data) != item['bootstrap_sha256']:
                 raise ValueError('bootstrap checksum changed; review source before publication')
             prior_count = old_meta['entries'] if old_meta else item.get('bootstrap_entries', 0)

@@ -6,15 +6,25 @@
     "transform": "clash-payload",
     "bootstrap_sha256": "0640a0a1230a207b016ca691ae3900904a280b903313d7d8fa347055e4d256d3",
     "bootstrap_entries": 78,
-    "attribution": "https://gist.githubusercontent.com/ddgksf2013/cb4121e8b5c5d865cc949cb8120320c4/raw/Ai.yaml",
+    "attribution": "http://script.hub/file/_start_/https://gist.githubusercontent.com/ddgksf2013/cb4121e8b5c5d865cc949cb8120320c4/raw/Ai.yaml/_end_/Ai.list?type=rule-set&target=surge-rule-set&del=true&jqEnabled=true",
+    "license": "See upstream; original notices retained"
+  },
+  {
+    "url": "https://gist.githubusercontent.com/blackmatrix7/7775186471b181e5ad472156ca3c206f/raw/quora.min.js",
+    "path": "resources/scripts/d5bb74ca984a-quora.min.js",
+    "kind": "script",
+    "transform": "identity",
+    "bootstrap_sha256": "b548a66b173ebf21b28e98a8d65674545d6a7cc9cba94b33f24d88c02490bfed",
+    "bootstrap_entries": 0,
+    "attribution": "https://gist.githubusercontent.com/blackmatrix7/7775186471b181e5ad472156ca3c206f/raw/quora.min.js",
     "license": "See upstream; original notices retained"
   },
   {
     "url": "https://raw.githubusercontent.com/510004015/Quantumult_X/Remote/Premium/BaiduCloud.js",
     "path": "resources/scripts/99bb8a3da5f2-BaiduCloud.js",
     "kind": "script",
-    "transform": "identity",
-    "bootstrap_sha256": "27e529c2275e374f14aaa86084c296c2930a95a2d500910866ab83175009f6fb",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "aeebff99c7e51dee717eb149379a34acf837188a46f70d7a68c951e82f29a55b",
     "bootstrap_entries": 0,
     "attribution": "https://raw.githubusercontent.com/510004015/Quantumult_X/Remote/Premium/BaiduCloud.js",
     "license": "See upstream; original notices retained"
@@ -23,8 +33,8 @@
     "url": "https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Craft.js",
     "path": "resources/scripts/983000646a98-Craft.js",
     "kind": "script",
-    "transform": "identity",
-    "bootstrap_sha256": "e9b77388074efe1e3fd4f4fb5084e54d38bb066dee40e4d19804fc8e9d9d070b",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "36d85f332cc7774e889b1c34c27618a161d1b807ad27b348555fe10d14c78dbf",
     "bootstrap_entries": 0,
     "attribution": "https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Craft.js",
     "license": "See upstream; original notices retained"
@@ -33,8 +43,8 @@
     "url": "https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Drafts.js",
     "path": "resources/scripts/b95b85d2846c-Drafts.js",
     "kind": "script",
-    "transform": "identity",
-    "bootstrap_sha256": "e5afe8adab97766d0b4f7996ebc9129aa223f83e2b8cd4793da4bca81e335860",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "6cb0900e0f4f633926e58f84927c2d36d722b0efe77b24f60da9664ed9ae0b96",
     "bootstrap_entries": 0,
     "attribution": "https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Drafts.js",
     "license": "See upstream; original notices retained"
@@ -43,8 +53,8 @@
     "url": "https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/ceo.js",
     "path": "resources/scripts/b2fadcc31100-ceo.js",
     "kind": "script",
-    "transform": "identity",
-    "bootstrap_sha256": "8e4d8286f3123cf2c2eb5715948bb30e0ec3324ebcf6b8606c0d4186f7c1149f",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "39e26fb2ccf2c35bb8b5605ea16bafbf33b31417ec4de667f7048f6c77f34d01",
     "bootstrap_entries": 0,
     "attribution": "https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/ceo.js",
     "license": "See upstream; original notices retained"
@@ -63,8 +73,8 @@
     "url": "https://raw.githubusercontent.com/Abinthur/Quantumult-X-For-Personal-Use/44e1afd4fb9015dcb1dd16a9e6930b415d965983/Surge/iTunes.js",
     "path": "resources/scripts/80f7d2aff428-iTunes.js",
     "kind": "script",
-    "transform": "identity",
-    "bootstrap_sha256": "0064d9611a85ccb5fab8416fb4dff5abbd3878aa3ade454f2befbfaafd97acf0",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "c636ed4822f4fde92e8ea8dbd0f1abc276f7e82892405a408f27dbc02ead0e6d",
     "bootstrap_entries": 0,
     "attribution": "https://raw.githubusercontent.com/Abinthur/Quantumult-X-For-Personal-Use/44e1afd4fb9015dcb1dd16a9e6930b415d965983/Surge/iTunes.js",
     "license": "See upstream; original notices retained"
@@ -73,8 +83,8 @@
     "url": "https://raw.githubusercontent.com/Abinthur/Quantumult-X-For-Personal-Use/main/scripts/cxzk.js",
     "path": "resources/scripts/4a920a7ceb50-cxzk.js",
     "kind": "script",
-    "transform": "identity",
-    "bootstrap_sha256": "55df87b8ee0eff689372f1548b021a556940758ed88c3bfde073d31e174490e1",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "511eccbbedb8de7959236ab83bce240ca82cdf28962cf060a8defb9861af1d65",
     "bootstrap_entries": 0,
     "attribution": "https://raw.githubusercontent.com/Abinthur/Quantumult-X-For-Personal-Use/main/scripts/cxzk.js",
     "license": "See upstream; original notices retained"
@@ -83,8 +93,8 @@
     "url": "https://raw.githubusercontent.com/Abinthur/Quantumult-X-For-Personal-Use/main/scripts/fantastical.js",
     "path": "resources/scripts/a94755c2c8c3-fantastical.js",
     "kind": "script",
-    "transform": "identity",
-    "bootstrap_sha256": "583fff819dd659d9d3919bd9410df43a82d2a2d0e8a373ac3757e3e477a06b69",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "ba5f7e508245e1511aac7ad0afc1dc4a9bf8d5a2c59f2ecb08de3fcfb2c8d47b",
     "bootstrap_entries": 0,
     "attribution": "https://raw.githubusercontent.com/Abinthur/Quantumult-X-For-Personal-Use/main/scripts/fantastical.js",
     "license": "See upstream; original notices retained"
@@ -93,8 +103,8 @@
     "url": "https://raw.githubusercontent.com/Abinthur/Quantumult-X-For-Personal-Use/main/scripts/peak.js",
     "path": "resources/scripts/e92d0aaaee1c-peak.js",
     "kind": "script",
-    "transform": "identity",
-    "bootstrap_sha256": "e8a5cd8df752aa1c1b49e9fb57548e4d172d65528f6260415c5e69ace72fc98b",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "06e571478f75f6c6f92253e640d522650b5d4a0d0db7cec5c0fde61386ebe31e",
     "bootstrap_entries": 0,
     "attribution": "https://raw.githubusercontent.com/Abinthur/Quantumult-X-For-Personal-Use/main/scripts/peak.js",
     "license": "See upstream; original notices retained"
@@ -103,18 +113,28 @@
     "url": "https://raw.githubusercontent.com/Abinthur/Quantumult-X-For-Personal-Use/main/scripts/xunjie.js",
     "path": "resources/scripts/a12ce7679637-xunjie.js",
     "kind": "script",
-    "transform": "identity",
-    "bootstrap_sha256": "8ae14420d3f2e4c1eaae17d4bc166d89d903ef6d48e15590b07d057d23bc76e0",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "0e61b4a44442f8a371f237dce7e22d9ea382d458383e210871315e3b15eb477d",
     "bootstrap_entries": 0,
     "attribution": "https://raw.githubusercontent.com/Abinthur/Quantumult-X-For-Personal-Use/main/scripts/xunjie.js",
+    "license": "See upstream; original notices retained"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Abinthur/Surge-for-personal-use/main/scripts/llsyd.js",
+    "path": "resources/scripts/c0a100de125a-llsyd.js",
+    "kind": "script",
+    "transform": "identity",
+    "bootstrap_sha256": "4ffb7a26755a3a399d0942586e837fd5fca14224375a7021dd2ed0f45a439128",
+    "bootstrap_entries": 0,
+    "attribution": "https://raw.githubusercontent.com/Abinthur/Surge-for-personal-use/main/scripts/llsyd.js",
     "license": "See upstream; original notices retained"
   },
   {
     "url": "https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/duet.js",
     "path": "resources/scripts/f6e83e9278ab-duet.js",
     "kind": "script",
-    "transform": "identity",
-    "bootstrap_sha256": "19225689647ef5aa03863e859c152201564ba626e3c80cfc80fb18d17c6bb35f",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "8bc4a4ce7339b6dd2e3e8a4ebd441be3e6317a5f5557e4238adcd6fcc3fc81f6",
     "bootstrap_entries": 0,
     "attribution": "https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/duet.js",
     "license": "See upstream; original notices retained"
@@ -123,8 +143,8 @@
     "url": "https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/jinrirebang.js",
     "path": "resources/scripts/cc66a281d59d-jinrirebang.js",
     "kind": "script",
-    "transform": "identity",
-    "bootstrap_sha256": "41a2926bbf84cd5987a6223587f4bb1d85081d0cf53b17cc14a5602f4ff3983b",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "03e10c3cc41a514c40396f955e952ff474287b52fe20c4e220b3167e200983d3",
     "bootstrap_entries": 0,
     "attribution": "https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/jinrirebang.js",
     "license": "See upstream; original notices retained"
@@ -133,28 +153,58 @@
     "url": "https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/mate.js",
     "path": "resources/scripts/3af8585e4774-mate.js",
     "kind": "script",
-    "transform": "identity",
-    "bootstrap_sha256": "9c4c1cc7784ea08fac50ed46862e3e02e7bd78ee6002111bf60c8a5f26d601e4",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "c17d2c8133cb2ad115cd87ed86f1dfa34786efd77ee0b2b3782e268080e5a576",
     "bootstrap_entries": 0,
     "attribution": "https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/mate.js",
+    "license": "See upstream; original notices retained"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/WeRead/weread.js",
+    "path": "resources/scripts/63c0b5b8448e-weread.js",
+    "kind": "script",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "d6694bd6521305bec162c6f63c12ed2d743568d38fbebc5185dc07bb95bf9c58",
+    "bootstrap_entries": 0,
+    "attribution": "https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/WeRead/weread.js",
     "license": "See upstream; original notices retained"
   },
   {
     "url": "https://raw.githubusercontent.com/Marol62926/MarScrpt/main/tenPercent.js",
     "path": "resources/scripts/8f54e89203f1-tenPercent.js",
     "kind": "script",
-    "transform": "identity",
-    "bootstrap_sha256": "c0f3f4537c891af085772db2ecb57960c69bd1bed909f3868744c4f1d2aca65a",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "36c9c7dabfa75e37a558bf2ef5a23732bea05591da1f8e6c8afbdb49c344e681",
     "bootstrap_entries": 0,
     "attribution": "https://raw.githubusercontent.com/Marol62926/MarScrpt/main/tenPercent.js",
+    "license": "See upstream; original notices retained"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/NobyDa/Script/master/Disney/DisneyRating.js",
+    "path": "resources/scripts/0aed09cd5204-DisneyRating.js",
+    "kind": "script",
+    "transform": "identity",
+    "bootstrap_sha256": "289485041ff47c757e89782a486014e3d91e291e05988ad934f3df18f141ca37",
+    "bootstrap_entries": 0,
+    "attribution": "https://raw.githubusercontent.com/NobyDa/Script/master/Disney/DisneyRating.js",
+    "license": "See upstream; original notices retained"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js",
+    "path": "resources/scripts/84a3e9a74412-Wechat.js",
+    "kind": "script",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "9bb12a8b442bbfdc50117034d1562d66ed717ee5d4c96cf8675941afa4671c96",
+    "bootstrap_entries": 0,
+    "attribution": "https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js",
     "license": "See upstream; original notices retained"
   },
   {
     "url": "https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/wnyd.js",
     "path": "resources/scripts/51bb3b40ebce-wnyd.js",
     "kind": "script",
-    "transform": "identity",
-    "bootstrap_sha256": "4f5f97228d08555f276bbb423aefddf3978cd44b251301eb1455683e0444491d",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "31800913a4815707665ef3b6e83853ee0ff8e84b70236bdfb4e2bbf79266d3c8",
     "bootstrap_entries": 0,
     "attribution": "https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/wnyd.js",
     "license": "See upstream; original notices retained"
@@ -180,11 +230,31 @@
     "license": "GPL-3.0"
   },
   {
+    "url": "https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js",
+    "path": "resources/scripts/02086290c7c6-spotify-json.js",
+    "kind": "script",
+    "transform": "identity",
+    "bootstrap_sha256": "41cf1074770cdef3948baa12ff4a8db9045d1cac888714c8b7e69909eb531bc9",
+    "bootstrap_entries": 0,
+    "attribution": "https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js",
+    "license": "See upstream; original notices retained"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js",
+    "path": "resources/scripts/99449675fd0d-spotify-proto.js",
+    "kind": "script",
+    "transform": "identity",
+    "bootstrap_sha256": "2e6850e888d092905c766f0bbedc4b4afb9a712330970cc1265105d7fb4995d0",
+    "bootstrap_entries": 0,
+    "attribution": "https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js",
+    "license": "See upstream; original notices retained"
+  },
+  {
     "url": "https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js",
     "path": "resources/scripts/9d456958a066-tieba-json.js",
     "kind": "script",
-    "transform": "identity",
-    "bootstrap_sha256": "91040c0d5bf906357829d8df344a3bdce00b59e6c24f255e54a2ef7a46d04c69",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "f278ecb3e7f575d8081f0296ab5ae0bc067dc95b7bf24019b025632d0d8e6323",
     "bootstrap_entries": 0,
     "attribution": "https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js",
     "license": "MIT"
@@ -603,8 +673,8 @@
     "url": "https://raw.githubusercontent.com/chxm1023/Rewrite/main/alidrive.js",
     "path": "resources/scripts/a1c1c10fbc50-alidrive.js",
     "kind": "script",
-    "transform": "identity",
-    "bootstrap_sha256": "53ed0914e8beec85ed8da7a09832c8e9d1b8744ed9c25ad671b22e1f59da4b48",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "7b138f5e3aa62f816054b0f73377fb200faac1af90f778f79961771f43bb0d84",
     "bootstrap_entries": 0,
     "attribution": "https://raw.githubusercontent.com/chxm1023/Rewrite/main/alidrive.js",
     "license": "See upstream; original notices retained"
@@ -613,20 +683,21 @@
     "url": "https://raw.githubusercontent.com/yqc007/QuantumultX/master/GrammarlyPremiumCrack.js",
     "path": "resources/scripts/99d8270c7322-GrammarlyPremiumCrack.js",
     "kind": "script",
-    "transform": "identity",
-    "bootstrap_sha256": "a62a9f4f83a4f4a9ed844038ccd041edbb82bfbc5f63c79fa29e9a365502d9ac",
+    "transform": "http-response-guard",
+    "bootstrap_sha256": "90f58930f17d633049c2d12ef53e335ae261e8b6f26248cdfbb942168b9e956a",
     "bootstrap_entries": 0,
     "attribution": "https://raw.githubusercontent.com/yqc007/QuantumultX/master/GrammarlyPremiumCrack.js",
     "license": "See upstream; original notices retained"
   },
   {
-    "url": "https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js",
+    "url": "https://raw.githubusercontent.com/Abinthur/Surge-for-personal-use/main/scripts/UnblockURLinWeChat.js",
     "path": "resources/scripts/6d1ee8efe017-UnblockURLinWeChat.js",
     "kind": "script",
     "transform": "identity",
-    "bootstrap_sha256": "79098ac4d2eb7932c9b2b45ac7891469703626855e5d13ab4374af52cc48983e",
+    "bootstrap_sha256": "f03e232e66008647ddb69ed2fdb7b3da971f353b5360b2a9b56a24b6e2bcc7db",
     "bootstrap_entries": 0,
     "attribution": "https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js",
-    "license": "See upstream; original notices retained"
+    "license": "See upstream; original notices retained",
+    "original_upstream": "https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js"
   }
 ]
