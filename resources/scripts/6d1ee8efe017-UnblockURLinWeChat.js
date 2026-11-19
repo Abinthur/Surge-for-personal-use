@@ -1,3 +1,17 @@
+// Surge protocol and completion safety fixes, 2026-11-19.
+(function () {
+  const responseStatus = Number($response.status);
+  const responseBody = $response.body;
+  if (String($request.method || "").toUpperCase() === "HEAD" ||
+      (responseStatus >= 100 && responseStatus < 200) ||
+      responseStatus === 204 || responseStatus === 205 || responseStatus === 304 ||
+      responseBody === undefined || responseBody === null ||
+      (typeof responseBody === "string" && responseBody.trim() === "") ||
+      (responseBody instanceof Uint8Array && responseBody.byteLength === 0)) {
+    $done({});
+    return;
+  }
+  try {
 let persisVal = read("UnblockURLinWeChat");
 let useCache = persisVal.useCache === "true"; //是否在微信中用快照显示被封禁的链接
 let forceRedirect = persisVal.forceRedirect === "true"; //是否在微信中进行强制重定向，允许的情况下可能出现循环重定向
@@ -27,7 +41,22 @@ const isLanceX = "undefined" != typeof $native;
 
 const redirectStatus = isQuanX ? "HTTP/1.1 302 Temporary Redirect" : 302;
 const cgiDataReg = /var cgiData = ([\s\S]*);\s*<\/script>/;
-let cgiData = JSON.parse(cgiDataReg.exec(respBody)[1].replace(/\\/g, ""));
+const cgiDataMatch = cgiDataReg.exec(respBody);
+if (!cgiDataMatch) {
+    $done({});
+    return;
+}
+let cgiData;
+try {
+    cgiData = JSON.parse(cgiDataMatch[1].replace(/\\/g, ""));
+} catch (_) {
+    $done({});
+    return;
+}
+if (!cgiData || typeof cgiData !== "object") {
+    $done({});
+    return;
+}
 
 // HTML entities by https://github.com/mathiasbynens/he
 // prettier-ignore
@@ -63,47 +92,32 @@ if (cgiData.type === "gray" || cgiData.type === "newgray" || cgiData.type === "e
         } else $done({});
     }
 } else if (cgiData.type === "block") {
-    !(async () => {
-        let url = cgiData.btns[0].url.replace("newreadtemplate", "redirecthelpcgi");
-        if (!/exportkey=(.+)/.test(url)) {
-            if (wechatExportKey) {
-                url += wechatExportKey;
-            } else {
-                $done({});
+    (async () => {
+        try {
+            if (!cgiData.btns?.[0]?.url) return $done({});
+            let url = cgiData.btns[0].url.replace("newreadtemplate", "redirecthelpcgi");
+            if (!/exportkey=(.+)/.test(url)) {
+                if (wechatExportKey) url += wechatExportKey;
+                else return $done({});
             }
+            const resp = await get(url);
+            const obj = JSON.parse(resp.body);
+            const target = obj?.btns?.[0]?.url;
+            if (typeof target !== "string") return $done({});
+            const targetMatch = /url=(.*)/.exec(target);
+            if (!targetMatch) return $done({});
+            let trueURL = decodeURIComponent(targetMatch[1]).replace(/&block_?type(.*)/, "");
+            trueURL = trueURL.includes(".") ? trueURL : Base64.decode(trueURL);
+            trueURL = trueURL.indexOf("http") == 0 ? trueURL : "http://" + trueURL;
+            if (trueURL.includes("web.archive.org/web")) return $done({});
+            notify("", "点击跳转到浏览器打开", trueURL, trueURL);
+            if (!useCache) return $done({});
+            const redirect = { status: redirectStatus, headers: { Location: cacheURL + trueURL } };
+            if (isQuanX) redirect.body = respBody;
+            return $done(redirect);
+        } catch (_) {
+            return $done({});
         }
-        await get(url).then((resp) => {
-            let obj = JSON.parse(resp.body);
-            if (obj.hasOwnProperty("btns")) {
-                let trueURL = decodeURIComponent(/url=(.*)/.exec(obj.btns[0].url)[1]).replace(
-                    /&block_?type(.*)/,
-                    ""
-                );
-                trueURL = trueURL.includes(".") ? trueURL : Base64.decode(trueURL);
-                trueURL = trueURL.indexOf("http") == 0 ? trueURL : "http://" + trueURL;
-                if (!trueURL.includes("web.archive.org/web")) {
-                    notify("", "点击跳转到浏览器打开", trueURL, trueURL);
-                    if (useCache) {
-                        let cacheLink = cacheURL + trueURL;
-                        let redirect = {
-                            status: redirectStatus,
-                            headers: {
-                                Location: cacheLink,
-                            },
-                        };
-                        if (isQuanX) redirect.body = respBody;
-                        $done(redirect);
-                    } else {
-                        $done({});
-                    }
-                } else {
-                    $done({});
-                }
-                resolve(trueURL);
-            }
-            $done({});
-            resolve();
-        });
     })();
 } else {
     $done({});
@@ -164,3 +178,6 @@ function read(key) {
         return JSON.parse($persistentStore.read(key) || "{}");
     }
 }
+
+  } catch (_) { $done({}); }
+})();
