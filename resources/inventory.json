@@ -1,0 +1,317 @@
+{
+  "resources/rules/0588be8d8e65-Steam.list": {
+    "bytes": 2571,
+    "entries": 69,
+    "sha256": "290ebccc4be56defc7d36f85d8c9777101548a4f2147ca29fe50b794c6a8dec7"
+  },
+  "resources/rules/08dd37367c4f-Telegram.list": {
+    "bytes": 1680,
+    "entries": 46,
+    "sha256": "3b375bee8b2ff16d6c955804a5a3638e6e8fdfcc58d209506a928bdd4cc9891a"
+  },
+  "resources/rules/334c6257dc63-WeChat.list": {
+    "bytes": 10637,
+    "entries": 341,
+    "sha256": "f6ab694f5cbdd28294279ca58541bcb310e1b208d50314f94470cc05ba1ee99d"
+  },
+  "resources/rules/34f20694c591-AppleNews.list": {
+    "bytes": 514,
+    "entries": 13,
+    "sha256": "21359ea0e99bd6c98084240b4756e99c9457858e8bd2adb39bfe6d5764f140e2"
+  },
+  "resources/rules/35480a7fd792-AliPay.list": {
+    "bytes": 749,
+    "entries": 21,
+    "sha256": "23d7ca5404f4795d485b4ea700f45e1d94f2dbf0f2871eeca5298cfce81ff5be"
+  },
+  "resources/rules/38e2c8ded287-Download.list": {
+    "bytes": 771,
+    "entries": 20,
+    "sha256": "32bb1052491936ed42c1a7f2d783c1b711086541eedf2bb0f027c4c3106dfbf5"
+  },
+  "resources/rules/391c5543c5a2-Epic.list": {
+    "bytes": 588,
+    "entries": 15,
+    "sha256": "8f5fcadadd967023aa81273803de80beb2ceadd9af4e9352b565b3b00ccf464d"
+  },
+  "resources/rules/3e22b05005ad-HBO.list": {
+    "bytes": 1784,
+    "entries": 50,
+    "sha256": "fd78b9a0a2ffedd9102d23256011bf8ec94ad98630c06337fdaa6970f4690832"
+  },
+  "resources/rules/3f57578ac136-Advertising_All.list": {
+    "bytes": 9604598,
+    "entries": 291174,
+    "sha256": "01f8b9caf1ab7b9ba58b17ebfcd04dc61b27af0751c43b5daa23ee5e7f6676d9"
+  },
+  "resources/rules/4a7004c21787-CMB.list": {
+    "bytes": 1167,
+    "entries": 38,
+    "sha256": "f74e32d571eb603904e33e5cd965c820063c60ab9b1bc9439df588aeac39fea6"
+  },
+  "resources/rules/4af3fa8aaae4-Claude.list": {
+    "bytes": 244,
+    "entries": 3,
+    "sha256": "870e7e25d798e7f00338507f773b0eea4dfd15e25e9df0a27d5ae421ae1ab378"
+  },
+  "resources/rules/4b635973c6cf-OpenAI.list": {
+    "bytes": 1353,
+    "entries": 35,
+    "sha256": "6f4047cdbf6953cf5d9b38c4ccd6da7bc6f1acb91b7a87134f25d5b8f5d2408b"
+  },
+  "resources/rules/5215222db20a-Twitch.list": {
+    "bytes": 917,
+    "entries": 22,
+    "sha256": "5f1e5ba766fcef3196ea6f03e05c1859af7d1122338beaceaea2919b6c82f7a8"
+  },
+  "resources/rules/534f775c10b8-ChinaMedia.list": {
+    "bytes": 14354,
+    "entries": 446,
+    "sha256": "d82e7315457f8aa1c4649df09d560e54dbc19757dc4fc5d8d2df0bd78a373079"
+  },
+  "resources/rules/57439a4fe480-Apple_All_No_Resolve.list": {
+    "bytes": 51378,
+    "entries": 1615,
+    "sha256": "e45e27cd85b876512dec54589fe2e0a5dc271eed4942016f023d43d5bb5a68a3"
+  },
+  "resources/rules/5a7a2984e071-Google.list": {
+    "bytes": 19985,
+    "entries": 703,
+    "sha256": "4b08fd3ef47e2668d2a4bb79777773e2408394fdda60ac36014e1a4d3456ba6f"
+  },
+  "resources/rules/64dac2d9b9bc-Nintendo.list": {
+    "bytes": 4120,
+    "entries": 126,
+    "sha256": "ca3cf3ea5051ed220c255fbccbdd93e477f1c558e26ada6bf3dbcc2ba0487da2"
+  },
+  "resources/rules/6c91d4395670-ParamountPlus.list": {
+    "bytes": 486,
+    "entries": 10,
+    "sha256": "cac7d967e7bcb6ccb080451e43b6de264706f749ee1195446ef07d3ccd38e2a3"
+  },
+  "resources/rules/6dec7a9f9a97-GitHub.list": {
+    "bytes": 1117,
+    "entries": 31,
+    "sha256": "ced8ab0ecda5775d04ec8ee6a57b282181108565331a6a1d85e9a26fee25d79b"
+  },
+  "resources/rules/7f38ce565abf-DouYin.list": {
+    "bytes": 533,
+    "entries": 13,
+    "sha256": "020e742fe4a7084268af6aa52c4153bf5bfd54c4d7a17466f42cd3461609e32a"
+  },
+  "resources/rules/867a7c871b0c-Microsoft.list": {
+    "bytes": 20605,
+    "entries": 673,
+    "sha256": "a2854b28dc9f903a64933c74fff5b50166e9bbebc70fdfce18c592f75793ff14"
+  },
+  "resources/rules/887da3fcdb03-Proxy_All_No_Resolve.list": {
+    "bytes": 190922,
+    "entries": 6993,
+    "sha256": "78c561b6900e08b8aaaceb76bac350731d1deadbffb4875d7fae29b6abd031c1"
+  },
+  "resources/rules/8bcff91a6e41-Disney.list": {
+    "bytes": 5674,
+    "entries": 175,
+    "sha256": "d0cfd6aee89d9d3075aef9dfadd98a2a3c6a2dba487f5091c801d1bcd70e9884"
+  },
+  "resources/rules/8e090da9c23b-YouTube.list": {
+    "bytes": 5451,
+    "entries": 190,
+    "sha256": "42274e143447066e26e1ebbf21ae03ce6efb40827f41e2775a84fb16d390713d"
+  },
+  "resources/rules/8fc6fe62240b-Dedao.list": {
+    "bytes": 351,
+    "entries": 8,
+    "sha256": "6685ad2236dedf9065b58eeb47b5af34b8fb79f0e6c2939f1cca7c629a3c3027"
+  },
+  "resources/rules/9189e4b02833-Alibaba.list": {
+    "bytes": 2125,
+    "entries": 58,
+    "sha256": "3d605a61b5d0789ca3835c0a040f8d764dff1ec325ff9857af3720658a20e6de"
+  },
+  "resources/rules/a4a6808a9a78-TikTok.list": {
+    "bytes": 1242,
+    "entries": 36,
+    "sha256": "e61af08425f87c1bc81216364c0f8fffbfc0a9924aab89f133151f1ea56de6c2"
+  },
+  "resources/rules/a8c7aebcbdb7-NYTimes.list": {
+    "bytes": 628,
+    "entries": 16,
+    "sha256": "db5f912210d562f363e4a5b7e64e76b8594ac317ecedbba88bea9d206b983761"
+  },
+  "resources/rules/b03c49e7ef32-BOCOM.list": {
+    "bytes": 324,
+    "entries": 6,
+    "sha256": "eca473c71e7ef3c215a1bc0a2780a583b69ad2ba3637edeac8dcac06c3113ff2"
+  },
+  "resources/rules/b08acb1743f5-HuYa.list": {
+    "bytes": 256,
+    "entries": 4,
+    "sha256": "9889627e10e5adebd648c1015f92da25f904f00b6705e114a8ff294a76268bff"
+  },
+  "resources/rules/b2aa19b2c7b1-Notion.list": {
+    "bytes": 341,
+    "entries": 6,
+    "sha256": "3466f69e742780c236fa45fa0f1ce83b80d176368b902d203017319b2554846c"
+  },
+  "resources/rules/b373f7a1a9a8-BiliBili.list": {
+    "bytes": 4742,
+    "entries": 133,
+    "sha256": "8537129301d5e4040d9f2b2255217458a16c96eef850ec22367352c512bc3988"
+  },
+  "resources/rules/bb33be345a9a-Sony.list": {
+    "bytes": 3309,
+    "entries": 116,
+    "sha256": "c3c96668d832b2b4e94ab185c14e2931d6af99d5a106bb658b0d83160fc9a19f"
+  },
+  "resources/rules/bd2c301a070a-UnionPay.list": {
+    "bytes": 616,
+    "entries": 16,
+    "sha256": "cf603ac5ee90f5869a4a119cec8b90eab865c6388858be4d97d196bff9a38187"
+  },
+  "resources/rules/c5c4a483178d-Ai.list": {
+    "bytes": 2602,
+    "entries": 78,
+    "sha256": "0640a0a1230a207b016ca691ae3900904a280b903313d7d8fa347055e4d256d3"
+  },
+  "resources/rules/d103d92f5133-ChinaMax_All.list": {
+    "bytes": 3262452,
+    "entries": 123125,
+    "sha256": "b9c0451a88da763fd2a19757f852a36092479b7119e22671df0ffce17bb57070"
+  },
+  "resources/rules/d38399433baa-Spotify.list": {
+    "bytes": 1246,
+    "entries": 31,
+    "sha256": "33bd52e8f23cda9374876259621c8fba21554035e20fa55daffbfcaee2109079"
+  },
+  "resources/rules/d48cf875ff11-Gemini.list": {
+    "bytes": 605,
+    "entries": 13,
+    "sha256": "db8f69154426dca76792ab80b3ad6b0e2d078ebe0e52e76faec1724245a4ec49"
+  },
+  "resources/rules/d9aba4ebe3a3-Douyu.list": {
+    "bytes": 495,
+    "entries": 13,
+    "sha256": "e29d67bbbd3734756e5bfe5db9764cd02313b9397c38b4609a69aba6ced1c393"
+  },
+  "resources/rules/dd38ed4fa765-GlobalMedia_All_No_Resolve.list": {
+    "bytes": 73351,
+    "entries": 2335,
+    "sha256": "cdad0ecd75c1d772f6492970a8ef60efcf4e0b6f12627766e78f2169bdbff122"
+  },
+  "resources/rules/edd13aa62079-Netflix.list": {
+    "bytes": 40424,
+    "entries": 1158,
+    "sha256": "aa03f015949e8f6f981d90a7d8b1acf7e88472ee48601632bd964b0bb740f8aa"
+  },
+  "resources/rules/f84f6ee1ca02-AWAvenue-Ads-Rule-Surge-RULE-SET.list": {
+    "bytes": 28185,
+    "entries": 998,
+    "sha256": "ec13264d2a9c72f84606236dd5022426b547630f6efbc4463137b768a0752b98"
+  },
+  "resources/scripts/3af8585e4774-mate.js": {
+    "bytes": 4099,
+    "entries": 0,
+    "sha256": "9c4c1cc7784ea08fac50ed46862e3e02e7bd78ee6002111bf60c8a5f26d601e4"
+  },
+  "resources/scripts/4a920a7ceb50-cxzk.js": {
+    "bytes": 222,
+    "entries": 0,
+    "sha256": "55df87b8ee0eff689372f1548b021a556940758ed88c3bfde073d31e174490e1"
+  },
+  "resources/scripts/51bb3b40ebce-wnyd.js": {
+    "bytes": 753,
+    "entries": 0,
+    "sha256": "4f5f97228d08555f276bbb423aefddf3978cd44b251301eb1455683e0444491d"
+  },
+  "resources/scripts/6d1ee8efe017-UnblockURLinWeChat.js": {
+    "bytes": 86443,
+    "entries": 0,
+    "sha256": "79098ac4d2eb7932c9b2b45ac7891469703626855e5d13ab4374af52cc48983e"
+  },
+  "resources/scripts/80f7d2aff428-iTunes.js": {
+    "bytes": 30054,
+    "entries": 0,
+    "sha256": "0064d9611a85ccb5fab8416fb4dff5abbd3878aa3ade454f2befbfaafd97acf0"
+  },
+  "resources/scripts/8a45096a95bd-Revenuecat.js": {
+    "bytes": 11260,
+    "entries": 0,
+    "sha256": "419879e062708cb986d58d262a5faa5039ee0a0d1fed1423072c9c6d7f273cc5"
+  },
+  "resources/scripts/8f54e89203f1-tenPercent.js": {
+    "bytes": 338,
+    "entries": 0,
+    "sha256": "c0f3f4537c891af085772db2ecb57960c69bd1bed909f3868744c4f1d2aca65a"
+  },
+  "resources/scripts/983000646a98-Craft.js": {
+    "bytes": 4411,
+    "entries": 0,
+    "sha256": "e9b77388074efe1e3fd4f4fb5084e54d38bb066dee40e4d19804fc8e9d9d070b"
+  },
+  "resources/scripts/99bb8a3da5f2-BaiduCloud.js": {
+    "bytes": 877,
+    "entries": 0,
+    "sha256": "27e529c2275e374f14aaa86084c296c2930a95a2d500910866ab83175009f6fb"
+  },
+  "resources/scripts/99d8270c7322-GrammarlyPremiumCrack.js": {
+    "bytes": 7943,
+    "entries": 0,
+    "sha256": "a62a9f4f83a4f4a9ed844038ccd041edbb82bfbc5f63c79fa29e9a365502d9ac"
+  },
+  "resources/scripts/9d456958a066-tieba-json.js": {
+    "bytes": 9971,
+    "entries": 0,
+    "sha256": "91040c0d5bf906357829d8df344a3bdce00b59e6c24f255e54a2ef7a46d04c69"
+  },
+  "resources/scripts/a12ce7679637-xunjie.js": {
+    "bytes": 546,
+    "entries": 0,
+    "sha256": "8ae14420d3f2e4c1eaae17d4bc166d89d903ef6d48e15590b07d057d23bc76e0"
+  },
+  "resources/scripts/a1c1c10fbc50-alidrive.js": {
+    "bytes": 3965,
+    "entries": 0,
+    "sha256": "53ed0914e8beec85ed8da7a09832c8e9d1b8744ed9c25ad671b22e1f59da4b48"
+  },
+  "resources/scripts/a94755c2c8c3-fantastical.js": {
+    "bytes": 1034,
+    "entries": 0,
+    "sha256": "583fff819dd659d9d3919bd9410df43a82d2a2d0e8a373ac3757e3e477a06b69"
+  },
+  "resources/scripts/b2fadcc31100-ceo.js": {
+    "bytes": 3954,
+    "entries": 0,
+    "sha256": "8e4d8286f3123cf2c2eb5715948bb30e0ec3324ebcf6b8606c0d4186f7c1149f"
+  },
+  "resources/scripts/b95b85d2846c-Drafts.js": {
+    "bytes": 3866,
+    "entries": 0,
+    "sha256": "e5afe8adab97766d0b4f7996ebc9129aa223f83e2b8cd4793da4bca81e335860"
+  },
+  "resources/scripts/cc66a281d59d-jinrirebang.js": {
+    "bytes": 211,
+    "entries": 0,
+    "sha256": "41a2926bbf84cd5987a6223587f4bb1d85081d0cf53b17cc14a5602f4ff3983b"
+  },
+  "resources/scripts/d5247c524b30-startup.js": {
+    "bytes": 12208,
+    "entries": 0,
+    "sha256": "431801d369b495d34b7a1c1d6cc43abdb1d159dd0d82491ee756c0ae834b625c"
+  },
+  "resources/scripts/e92d0aaaee1c-peak.js": {
+    "bytes": 952,
+    "entries": 0,
+    "sha256": "e8a5cd8df752aa1c1b49e9fb57548e4d172d65528f6260415c5e69ace72fc98b"
+  },
+  "resources/scripts/f38021eb462f-tieba-proto.js": {
+    "bytes": 97069,
+    "entries": 0,
+    "sha256": "6015d737870b6d89c38a0181479ed715e07d11b5a2c3746f96f95e25835e8610"
+  },
+  "resources/scripts/f6e83e9278ab-duet.js": {
+    "bytes": 2039,
+    "entries": 0,
+    "sha256": "19225689647ef5aa03863e859c152201564ba626e3c80cfc80fb18d17c6bb35f"
+  }
+}
