@@ -1,0 +1,5 @@
+#!name=流利说阅读正常联网
+#!desc=让一个阅读后端域名沿用原始 TLS 连接
+
+[General]
+always-raw-tcp-hosts = %APPEND% rengine-platform.llsapp.com
