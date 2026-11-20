@@ -84,11 +84,19 @@
   function fail(message) {
     done((cached ? render(cached) + "\n" : "") + "刷新失败：" + message + (cached ? "；当前为上次成功数据" : ""), "error");
   }
-  function get(target, agent, callback) {
+  function get(target, agent, callback, policy) {
+    var options = { url: target, headers: { "User-Agent": agent }, timeout: 8,
+      "auto-redirect": false, "auto-cookie": false };
+    if (policy) options.policy = policy;
     try {
-      $httpClient.get({ url: target, headers: { "User-Agent": agent }, timeout: 8,
-        "auto-redirect": false, "auto-cookie": false }, function (error, response, body) {
-        if (error || !response) { callback("网络或 TLS 请求失败"); return; }
+      $httpClient.get(options, function (error, response, body) {
+        if (error || !response) {
+          if (!policy && (id === "shandian1" || id === "shandian2") &&
+              /^https:\/\/45\.78\.78\.177:15251\/v2b\/shandian\/api\/v1\/client\/subscribe\?/.test(target)) {
+            get(target, agent, callback, "DIRECT");
+          } else callback(policy === "DIRECT" ? "默认线路和直连均未连通" : "网络或 TLS 请求失败");
+          return;
+        }
         if (Number(response.status) !== 200) { callback("HTTP " + Number(response.status)); return; }
         callback(null, response, typeof body === "string" ? body : "");
       });

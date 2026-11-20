@@ -94,6 +94,18 @@ for (const id of ['xlink', 'shandian1', 'shandian2', 'youtu']) {
   r = run(input, id === 'youtu' ? [ok(), ok(label)] : [ok()]);
   assert.match(r.result.content, /剩余 7.00 GB/);
 }
+for (const id of ['shandian1', 'shandian2']) {
+  const link = 'id=' + id + '&account=&url=https://45.78.78.177:15251/v2b/shandian/api/v1/client/subscribe?token=FAKE';
+  const offline = { error: 'offline' };
+  r = run(link, [offline, ok()]);
+  assert.deepEqual(r.requests.map(request => request.policy), [undefined, 'DIRECT']);
+  assert.equal(r.requests[1].url, r.requests[0].url);
+  assert.equal(r.requests[1].insecure, undefined);
+  assert.match(r.result.content, /剩余 7.00 GB/);
+  assert.match(run(link, [offline, offline]).result.content, /默认线路和直连均未连通/);
+  assert.equal(run(link, [{ status: 403 }]).requests.length, 1);
+  assert.equal(run(link.replace('45.78.78.177', 'example.com'), [offline]).requests.length, 1);
+}
 const declared = /^#!arguments=(.*)$/m.exec(moduleText)[1].split(',');
 const used = [...moduleText.matchAll(/\{\{\{(\w+)\}\}\}/g)].map(x => x[1]);
 assert.deepEqual([...declared].sort(), [...used].sort());

@@ -47,6 +47,8 @@ https://raw.githubusercontent.com/Abinthur/Surge-for-personal-use/main/modules/s
 
 脚本使用 HTTPS 并验证服务器证书；不自动跟随重定向，避免带凭据的链接意外发往其他地址。如果显示 HTTP 30x，请从机场后台取得当前订阅地址再更新参数。如果显示网络或 TLS 错误，请检查设备网络、链接有效性及机场证书，不要通过关闭证书校验解决。
 
+闪电面板访问已知的闪电 HTTPS 订阅端点时，先走现有分流规则，连接失败再尝试一次 DIRECT。重试仍会校验证书。
+
 Xlink 使用 Surge 客户端标识、闪电使用 Clash 客户端标识读取响应头；悠兔会自动请求 Clash 格式取得用量，并请求原始格式取得重置倒计时，用户不用手动转换链接。
 
 ## 开发检查
