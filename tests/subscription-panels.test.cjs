@@ -6,9 +6,10 @@ const source = fs.readFileSync(path.join(__dirname, '../scripts/subscription-pan
 const moduleText = fs.readFileSync(path.join(__dirname, '../modules/subscription-panels.sgmodule'), 'utf8');
 const header = 'upload=1073741824; download=2147483648; total=10737418240; expire=1900000000';
 const ok = (body = '', headers = { 'Subscription-UserInfo': header }) => ({ status: 200, headers, body });
-function run(argument, responses = [], store = {}) {
+function run(argument, responses = [], store = {}, now = Date.parse('2026-11-20T12:00:00+08:00')) {
   const requests = [], results = [];
   vm.runInNewContext(source, {
+    Date: class extends Date { static now() { return now; } },
     $argument: argument,
     $httpClient: { get(options, callback) {
       requests.push(options);
@@ -30,7 +31,7 @@ assert.equal(r.requests[0].url, 'https://example.com/sub?token=FAKE&extra=a=b');
 assert.equal(r.requests[0].headers['User-Agent'], 'Surge/5.0');
 assert.match(r.result.title, /Xlink test@example.com/);
 assert.match(r.result.content, /剩余 7.00 GB\n已用 3.00 GB/);
-assert.match(r.result.content, /距离重置 暂未获取/);
+assert.match(r.result.content, /距离重置 \d+ 天（推算）/);
 assert.doesNotMatch(JSON.stringify(r.store), /FAKE|https:|test@example/);
 const escaped = 'id=xlink&account=test@example.com&url=https\\:\\/\\/example\\.com/sub\\?token\\=FAKE\\&extra=a=b';
 assert.equal(run(escaped, [ok()]).requests[0].url, r.requests[0].url);
@@ -38,6 +39,16 @@ for (const url of ['https://666.youtu6.shop/login', 'https://666.youtu6.shop/', 
   const login = run('id=youtu&account=&url=' + url);
   assert.equal(login.requests.length, 0);
   assert.match(login.result.content, /这是机场登录地址/);
+}
+for (const [now, expiry, days] of [
+  ['2026-11-20T13:00:00+08:00', '2027-09-12T00:00:00+08:00', 22],
+  ['2026-12-12T00:10:00+08:00', '2027-09-12T00:00:00+08:00', 0],
+  ['2026-12-13T00:00:00+08:00', '2027-09-12T00:00:00+08:00', 30],
+  ['2027-02-25T12:00:00+08:00', '2027-07-31T00:00:00+08:00', 3],
+  ['2027-03-01T12:00:00+08:00', '2027-07-31T00:00:00+08:00', 30],
+]) {
+  const sample = ok('', { 'subscription-userinfo': header.replace('1900000000', String(Date.parse(expiry) / 1000)) });
+  assert.ok(run(argument, [sample], {}, Date.parse(now)).result.content.includes(`距离重置 ${days} 天（推算）`));
 }
 const store = r.store;
 r = run(argument, [{ error: 'network error with SECRET URL' }], store);
@@ -54,6 +65,7 @@ assert.match(r.result.content, /HTTP 302/);
 assert.equal(r.requests.length, 1);
 for (const suffix of ['expire=0', '', 'expire=1700000000']) {
   r = run(argument, [ok('', { 'subscription-userinfo': header.replace('expire=1900000000', suffix) })]);
+  assert.match(r.result.content, /距离重置 暂未获取/);
   assert.match(r.result.content, suffix.includes('1700000000') ? /套餐已到期/ : /到期时间 暂未提供/);
 }
 r = run(argument, [ok('', { 'subscription-userinfo': 'upload=NaN;download=0;total=20' })]);
@@ -73,7 +85,7 @@ r = run('id=youtu&account=&url=https://example.com/sub?flag=surge&a=1', [ok(), {
 assert.equal(r.requests[0].url, 'https://example.com/sub?flag=clash&a=1');
 assert.equal(r.requests[1].url, 'https://example.com/sub?a=1');
 assert.match(r.result.content, /剩余 7.00 GB/);
-assert.match(r.result.content, /距离重置 暂未获取/);
+assert.match(r.result.content, /距离重置 \d+ 天（推算）/);
 for (const id of ['xlink', 'shandian1', 'shandian2', 'youtu']) {
   const line = moduleText.split('\n').find(x => x.startsWith('subscription_' + id + ' = type='));
   assert.ok(line);

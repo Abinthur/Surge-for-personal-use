@@ -45,18 +45,36 @@
   function stamp(ms) {
     return new Date(ms + 8 * 3600000).toISOString().slice(0, 16).replace("T", " ");
   }
+  function estimatedResetDays(expire, now) {
+    var beijingOffset = 8 * 3600000;
+    var today = new Date(now + beijingOffset);
+    var resetDay = new Date(expire * 1000 + beijingOffset).getUTCDate();
+    var year = today.getUTCFullYear();
+    var month = today.getUTCMonth();
+    var todayDate = Date.UTC(year, month, today.getUTCDate());
+    function resetDate(m) {
+      var lastDay = new Date(Date.UTC(year, m + 1, 0)).getUTCDate();
+      return Date.UTC(year, m, Math.min(resetDay, lastDay));
+    }
+    var next = resetDate(month);
+    if (next < todayDate) next = resetDate(month + 1);
+    return (next - todayDate) / DAY;
+  }
   function render(s) {
     var used = s.upload + s.download;
+    var now = Date.now();
     var reset = "暂未获取";
     if (Number.isInteger(s.resetDays) && s.resetDays >= 0) {
       // shortcut: the provider supplies whole days only; exact reset time is unknown.
-      reset = Math.max(0, s.resetDays - Math.floor((Date.now() - s.fetchedAt) / DAY)) + " 天（机场返回）";
+      reset = Math.max(0, s.resetDays - Math.floor((now - s.fetchedAt) / DAY)) + " 天（机场返回）";
+    } else if (s.expire && s.expire * 1000 > now) {
+      reset = estimatedResetDays(s.expire, now) + " 天（推算）";
     }
     var lines = ["剩余 " + (Math.max(0, s.total - used) / Math.pow(1024, 3)).toFixed(2) + " GB",
       "已用 " + (used / Math.pow(1024, 3)).toFixed(2) + " GB",
       "距离重置 " + reset];
     if (s.expire) {
-      var days = Math.ceil((s.expire * 1000 - Date.now()) / DAY);
+      var days = Math.ceil((s.expire * 1000 - now) / DAY);
       lines.push(days > 0 ? "距离到期 " + days + " 天" : "套餐已到期");
       lines.push("到期 " + stamp(s.expire * 1000).slice(0, 10));
     } else lines.push("到期时间 暂未提供");
