@@ -18,6 +18,8 @@ https://raw.githubusercontent.com/Abinthur/Surge-for-personal-use/main/modules/s
 
 使用原始订阅地址，不要填写登录页或第三方订阅转换地址。链接中的 `?`、`&`、`=` 原样保留。账号名称不要包含 `&`、双引号或换行。若暂不配置某个账号，对应面板会提示填写链接。
 
+从聊天复制时，建议确认链接以 `https://` 开头。脚本也兼容常见 Markdown 转义。悠兔请填套餐订阅地址（形如 `https://sub.youtulink3.top/dy/…`）。
+
 无需机场账号密码、MITM 或证书，也不修改节点、策略组和分流规则。不依赖其他电脑或服务常驻。
 
 ## 查看与刷新

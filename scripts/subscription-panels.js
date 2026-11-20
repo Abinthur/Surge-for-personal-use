@@ -10,7 +10,8 @@
   var title = names[id] || "订阅用量";
   var account = args ? args[2].trim() : "";
   if (account) title += " " + account;
-  var url = args ? args[3].trim() : "";
+  // Undo Markdown escapes introduced when copying a subscription from chat.
+  var url = args ? args[3].trim().replace(/\\([:/.?=&_-])/g, "$1") : "";
   var finished = false;
   function done(content, style) {
     if (finished) return;
@@ -21,8 +22,13 @@
     done("请在模块参数中填写本账号的 HTTPS 订阅链接", "info");
     return;
   }
-  if (!/^https:\/\/[^\s"<>]+$/i.test(url)) {
+  if (!/^https:\/\/[^\s"<>\\/?#@]+(?:[/?][^\s"<>\\#]*)?$/i.test(url)) {
     done("订阅链接格式无效：请填写完整的 HTTPS 地址", "error");
+    return;
+  }
+  if (/^https:\/\/[^/?]+\/(?:auth\/)?login\/?(?:\?|$)/i.test(url) ||
+      (id === "youtu" && /^https:\/\/666\.youtu6\.shop(?:[/?]|$)/i.test(url))) {
+    done("这是机场登录地址。请填写套餐的 HTTPS 订阅链接。", "error");
     return;
   }
   var hash = 2166136261;

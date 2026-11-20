@@ -32,6 +32,13 @@ assert.match(r.result.title, /Xlink test@example.com/);
 assert.match(r.result.content, /剩余 7.00 GB\n已用 3.00 GB/);
 assert.match(r.result.content, /距离重置 暂未获取/);
 assert.doesNotMatch(JSON.stringify(r.store), /FAKE|https:|test@example/);
+const escaped = 'id=xlink&account=test@example.com&url=https\\:\\/\\/example\\.com/sub\\?token\\=FAKE\\&extra=a=b';
+assert.equal(run(escaped, [ok()]).requests[0].url, r.requests[0].url);
+for (const url of ['https://666.youtu6.shop/login', 'https://666.youtu6.shop/', 'https://example.com/auth/login?ref=demo']) {
+  const login = run('id=youtu&account=&url=' + url);
+  assert.equal(login.requests.length, 0);
+  assert.match(login.result.content, /这是机场登录地址/);
+}
 const store = r.store;
 r = run(argument, [{ error: 'network error with SECRET URL' }], store);
 assert.match(r.result.content, /剩余 7.00 GB/);
