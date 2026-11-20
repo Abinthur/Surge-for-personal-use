@@ -1,0 +1,16 @@
+#!name=四订阅用量面板
+#!desc=Xlink、闪电双账号、悠兔：剩余/已用流量、到期日、重置倒计时及查询时间。仅在本机填写订阅链接，无需登录和 MITM。
+#!arguments=xlink_url,shandian1_url,shandian2_url,youtu_url,xlink_account,shandian1_account,shandian2_account,youtu_account
+#!arguments-desc=前四项填写对应账号的完整 HTTPS 订阅链接；后四项为可选账号名称（如邮箱）。请勿将填入凭据后的配置公开。GB 按 1024 进制换算；打开面板时每隔 30 分钟检查刷新，也可手动刷新。
+
+[Panel]
+subscription_xlink = title="Xlink",content="请填写模块参数后刷新",style=info,script-name=subscription_xlink,update-interval=1800
+subscription_shandian1 = title="闪电 1",content="请填写模块参数后刷新",style=info,script-name=subscription_shandian1,update-interval=1800
+subscription_shandian2 = title="闪电 2",content="请填写模块参数后刷新",style=info,script-name=subscription_shandian2,update-interval=1800
+subscription_youtu = title="悠兔",content="请填写模块参数后刷新",style=info,script-name=subscription_youtu,update-interval=1800
+
+[Script]
+subscription_xlink = type=generic,script-path=https://raw.githubusercontent.com/Abinthur/Surge-for-personal-use/main/scripts/subscription-panels.js,timeout=30,argument="id=xlink&account={{{xlink_account}}}&url={{{xlink_url}}}"
+subscription_shandian1 = type=generic,script-path=https://raw.githubusercontent.com/Abinthur/Surge-for-personal-use/main/scripts/subscription-panels.js,timeout=30,argument="id=shandian1&account={{{shandian1_account}}}&url={{{shandian1_url}}}"
+subscription_shandian2 = type=generic,script-path=https://raw.githubusercontent.com/Abinthur/Surge-for-personal-use/main/scripts/subscription-panels.js,timeout=30,argument="id=shandian2&account={{{shandian2_account}}}&url={{{shandian2_url}}}"
+subscription_youtu = type=generic,script-path=https://raw.githubusercontent.com/Abinthur/Surge-for-personal-use/main/scripts/subscription-panels.js,timeout=30,argument="id=youtu&account={{{youtu_account}}}&url={{{youtu_url}}}"

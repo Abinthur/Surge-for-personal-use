@@ -10,6 +10,11 @@
 | `liulishuo-networking` | 流利说阅读正常联网（让 rengine-platform.llsapp.com 走原始 TLS） | `https://raw.githubusercontent.com/Abinthur/Surge-for-personal-use/main/modules/liulishuo-networking.sgmodule` |
 | `xiaoyuzhou-feed-filter` | 小宇宙首页信息流推广横幅过滤 | `https://raw.githubusercontent.com/Abinthur/Surge-for-personal-use/main/modules/xiaoyuzhou-feed-filter.sgmodule` |
 | `quora-ads` | Quora 网页去广告（首页/回答/文章底部） | `https://raw.githubusercontent.com/Abinthur/Surge-for-personal-use/main/modules/quora-ads.sgmodule` |
+| `subscription-panels` | 四订阅用量面板（Xlink、闪电双账号、悠兔） | `https://raw.githubusercontent.com/Abinthur/Surge-for-personal-use/main/modules/subscription-panels.sgmodule` |
+
+## 四订阅用量面板
+
+安装及参数说明见 [使用说明](docs/subscription-panels.md)。仅在自己的设备中填写订阅链接，仓库不保存订阅凭据。
 
 ## 流利说·阅读
 
