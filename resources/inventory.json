@@ -205,9 +205,9 @@
     "sha256": "aa03f015949e8f6f981d90a7d8b1acf7e88472ee48601632bd964b0bb740f8aa"
   },
   "resources/rules/f84f6ee1ca02-AWAvenue-Ads-Rule-Surge-RULE-SET.list": {
-    "bytes": 28185,
+    "bytes": 28307,
     "entries": 998,
-    "sha256": "ec13264d2a9c72f84606236dd5022426b547630f6efbc4463137b768a0752b98"
+    "sha256": "6e9acccf61067f2e5b83854779b9d3c257c30ea92958946c3943d02c7e1b62ec"
   },
   "resources/scripts/02086290c7c6-spotify-json.js": {
     "bytes": 381,
